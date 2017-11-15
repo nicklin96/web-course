@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework 1 by y2017g45</title>
+    <style>
+        #content p{
+            text-indent: 2em;
+        }
+        #bottom{
+            text-align: center;
+        }
+        #answer_list td{
+            row-span: 2;
+            column-span: 2;
+        }
+    </style>
+</head>
+<body>
+<div id="top">
+    <table cellspacing="5">
+        <tbody>
+        <tr>
+            <td>
+                <img src="pic/logo.jpg" alt="logo" height="80" width="80">
+            </td>
+            <td>
+                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+            </td>
+            <td>
+                <h1>
+                    This is my first homework:
+                </h1>
+                <a href="index.html">[Go back to front page]</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+</div>
+<div id="content">
+    <!--
+    In this part, I make use of various HTML elements including paragraphs, line breaks, headings,
+    hypertext links, hypertext links that target within the same page, an ordered list,
+    a table with rowspan and colspan attributes specified and a HTML comment
+    -->
+    <h4>Question1:</h4>
+    <p>For the three categories of web software technology we've just defined, you are asked to find out which
+        category so-called "Chrome plug-in" technology belongs to. Please describe the basic idea of the technology,
+        and give your reasoning on its position in the technology categories.
+    </p>
+    <h4>Answer to question 1:</h4>
+    <p>I think "Chrome plug-in" belongs to Distributed Object/Component Technology. The reason is:</p>
+    <p>"Chrome plug-in" refers to software intended to add new features/function to Chrome borwser. Similar to CORBA, users can install plug-ins whenever they like. Meanwhile, plug-ins can call functions provided by the browser. They can cooperate with each other, even though they are developed with different languages, OS and tool sets, but they can be independent, too.</p>
+    <p>In all, "Chrome plug-in" fits the requirement on time, space, platform and awareness mentioned in the "Distributed Object Technology" section. So they are one of them.</p>
+    <br>
+    <hr>
+    <h4>Question2:</h4>
+    <p>In a normal intercommunication between Web browser and Web Server, Web Server closes the network communication right after it sends back the document requested by the browser. Think about this statusless character of World Wide Web. Give some good points and bad points of it. Can a web server know exactly how many browsers are reading its document?</p>
+    <h4>Answer to question 2</h4>
+    <table  id="answer_list">
+        <thead>
+        <tr>
+            <td>Advantages</td>
+            <td>Disadvantages</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>
+                <ol>
+                    <li>When the network was closed, some resources will be free for other process to use, which increases the productivity.</li>
+                    <li>The client does not need to inform the server to close the network, so the communication cost in the web will be eased.</li>
+                    <li>the service logic in the server will be simplified and easier to manage.</li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                    <li>In case that the client needs to send many requests in a very short period of time, the cost of establishing the communication once in a time will be huge.</li>
+                    <li>If any errors occurred after the network was closed, the server may not know about that.</li>
+                    <li>it's hard to handle some technology that create dynamic web pages, ajax for example.</li>
+                </ol>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <hr>
+    <div>
+        <h4>Question3(optional):</h4>
+        <p>Open Question: of those client side technologies, why Java Applet is getting dead and Javascript success? Try to explain from the "REST" perspective.</p>
+        <h4>Answer to question3</h4>
+        <p>My reasons are as follows:</p>
+        <ol>
+            <li>In REST style, the client end and the server end are separated. So the need of software intended for the client end, which is usually a browser, is huge. Java Applet is based on Java, and it is harder to learn Java than to learn javascript because the former is much more complicated.</li>
+            <li>Java Applet is self-contained and only react to commands within its own boundaries. In other words, its capability to interact with the browser is not as good as javascript. It performs well in terms of creating games, 3D demonstrations and math tools, but it is not the case when it comes to handle http requests. Whereas, in REST style, we rely on http requests to handle the resources. Javascript, undoubtedly, is a better choice.</li>
+            <li>Java Applet must be compiled into .class files and runs in JVM, so one applet is an indivisible whole. This feature results in a lack of flexibility. However, you can run only one or two lines of javascript code in the browser console, just changing the background color of one single page. Therefore, javascript can better realize the Code-on-Command Constrain.</li>
+        </ol>
+    </div>
+</div>
+<div id="bottom">
+    <hr>
+    <a href="index.html">[back to homepage]</a>
+    <a href="#top">[back to top]</a>
+</div>
+
+</body>
+</html>

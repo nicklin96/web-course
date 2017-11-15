@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+</head>
+<body>
+<h4>1.</h4>
+<button id="alertBut">Click me!</button>
+<div id="alertDisplay">Click the above button and you will see the result of function myAlert2</div>
+<h4>2.</h4>
+<label>String 1: &nbsp;</label><input type="text" id="str1"><br>
+<label>String 2: &nbsp;</label><input type="text" id="str2"><br>
+<button id="cat">cat</button>
+<p>click "cat" and you will see the result below</p>
+<div id="displayZone">
+    <p>Example:</p>
+    <p>aroha!=wow</p>
+</div>
+<script>
+    function myAlert2(aString) {
+        //this function takes parameter
+        // it also returns a value
+        //window.alert("Alerting: " + aString);
+        return 34;
+    }
+    $(document).ready(function () {
+        $("#cat").click(function () {
+            $("#displayZone").html($("#str1").val() + "!=" + $("#str2").val());
+        });
+        $("#alertBut").click(function () {
+            $("#alertDisplay").html(myAlert2("sth"));
+        });
+    });
+</script>
+
+</body>
+</html>

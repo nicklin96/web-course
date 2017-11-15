@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>web技术概论-y2017g45</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/hw4.js"></script>
+</head>
+<body>
+<h2>Welcome to our parties!</h2>
+<p>Haven't registered your information? Click <a id="show_register" href="#">here</a></p>
+<p>What to hold your own party? Click <a id="show_party_register" href="#">here</a></p>
+<div id="register_party_area">
+    <hr>
+    <h4>Please specify your party information here</h4>
+    <form id="register_party_form" method="post">
+        <p>Party time: &nbsp; <input type="text" name="ptime" id="ptime"> &nbsp;Caution: the time format should be like "2017-10-26 8:30 PM" </p>
+        <p>Place: &nbsp; <input type="text" name="pplace" id="pplace"></p>
+        <p>Host name: &nbsp; <input type="text" name="phname" id="phname"></p>
+        <button id="register_party_submit" type="submit">Register</button>
+        <button id="reset_party">Reset</button>
+        <button id="hide_register_party">Hide</button>
+    </form>
+</div>
+<div id="register_area">
+    <hr>
+    <h4>Please input your information here</h4>
+    <form id="register_form" method="post" action="php/register.php">
+        <p>Your name: &nbsp;<input type="text" name="gname" id="gname"></p>
+        <p>Your age: &nbsp;<input type="text" name="gage" id="gage"></p>
+        <p>Your gender:</p>
+        <p><input type="radio" name="ggender" value="male">male &nbsp; <input type="radio" name="ggender" value="female">female</p>
+        <p>Your e-mail address: &nbsp; <input type="email" id="gemail" name="gemail"></p>
+        <button id="register_submit" type="submit">Register</button>
+        <button id="reset">Reset</button>
+        <button id="hide_register">Hide</button>
+    </form>
+</div>
+<hr>
+<div id="participate_area">
+    <h4>Here, you can get yourself and your friends to the parties!</h4>
+    <button id="participate_refresh">Refresh</button><br>
+    <form id="participate_form" method="post">
+        <div id="guest_list"></div>
+        <div id="party_list"></div>
+        <button type="submit" id="participate_submit">Yes, we are in!</button>
+        <button type="submit" id="participate_withdraw">Sorry, we are not coming!</button>
+        <p id="tips"></p>
+    </form>
+    <p>Direction: select all the guests involved, and select the party one at a time. With one click on the "we are in" button, you can go to this party to have fun.<br>
+    And if you change your mind, the "we are not coming" button will be helpful</p>
+</div>
+
+</body>
+</html>
+
+

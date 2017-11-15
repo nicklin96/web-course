@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>web技术概论-y2017g45</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="js/update.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <style>
+        .header{
+            padding:5px;
+        }
+        .left_column{
+            width:200px;
+            float: left;
+        }
+        .right-column{
+            width: 200px;
+            float: right;
+        }
+        .main{
+            width: 100%;
+        }
+        .center{
+            height: 100%;
+        }
+        .left_column,.right-column,.main{
+            display: table-cell;
+            height: 100%;
+        }
+        .left_column p,.right-column p,.main p{
+            margin: 0;
+            text-align: center;
+        }
+        img{
+            height: 70%;
+            width: 70%;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/dd.css">
+</head>
+<body>
+<h1>Question 1</h1>
+<div class="header" style="background-color: blue">
+    <h2>Question 1</h2>
+</div>
+<div class="center" style="display: table">
+    <div class="left_column" style="background-color: crimson">
+        <p>The height of left column and of right column are always equal</p>
+    </div>
+    <div class="main" style="background-color: coral">
+    </div>
+    <div class="right-column" style="background-color: greenyellow">
+    </div>
+</div>
+<div class="footer" style="background-color: linen">
+    <p>footer</p>
+</div>
+<br>
+<h1>Below is the pass icons</h1>
+<img src="pic/pass%20icon.png" alt="HTML pass icon">
+<br>
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img src="http://jigsaw.w3.org/css-validator/images/vcss"
+             style="border: 0;width: 88px;height: 31px"
+             alt="Valid CSS!">
+    </a>
+</p>
+<br>
+<h1>Question 2</h1>
+<table>
+    <tr>
+        <td width="300px">
+            <form id="insertForm" action="../../cgi-bin/insert.pl" method="post">
+                <h2>Welcome to the survey!</h2>
+                <h4>Your name:</h4>
+                <input type="text" name="name">
+                <h4>Your age:</h4>
+                <input type="text" name="age">
+                <h4>Your gender:</h4>
+                <p>
+                    <input type = "radio"  name = "gender"  value = "female"
+                           checked = "checked" /> Female <br />
+                    <input type = "radio"  name = "gender"  value = "male" />
+                    Male <br /> <br />
+                </p>
+                <h4>Your e-mail address:</h4>
+                <input type="email" name="email">
+                <br><br>
+                <button value="Submit" id="submit">Submit</button>
+            </form>
+        </td>
+        <td>
+			<div id="ajax_target">
+			</div>
+            <button id="delete_but" onclick="deleteInfo();">Click here to delete the selected piece</button>
+        </td>
+    </tr>
+</table>
+<hr>
+<p>
+    If you want to know all the information we've collected, click <a href="#ajax_query" id="ajax_query">here</a>, <b>ajax is applied here</b>
+</p>
+</body>
+</html>

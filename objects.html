@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>objects</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+</head>
+<body>
+<label>Destination: &nbsp;</label><input type="text" id="des"><br>
+<label>Duration: &nbsp;</label><input type="text" id="dur"><label>input a number in yuans</label><br>
+<label>Cost: &nbsp;</label><input type="text" id="cos"><label>input a number in days</label><br>
+<button id="make">Add new holiday</button>
+<h4>Existing holidays:</h4>
+<div id="holidayDisplay">No holiday yet</div>
+
+
+<script>
+    holidays = [];
+    function Holiday(destination,duration,cost) {
+        this.destination = destination;
+        this.duration = duration;
+        this.cost = cost;
+    }
+    function makeHoliday(des,dur,cos){
+        var hol = new Holiday(des,dur,cos);
+        holidays.push(hol);
+    }
+    function showHoli() {
+        var list = $("<ul></ul>");
+        for(var i=0;i<holidays.length;i++){
+            var outLi = $("<li></li>");
+            $("<label>Holiday"+(i+1)+"</label>").appendTo(outLi);
+            var inLi = $("<ul></ul>");
+            $("<li>Destination: "+holidays[i].destination+"</li>").appendTo(inLi);
+            $("<li>Duration: "+holidays[i].duration+" days</li>").appendTo(inLi);
+            $("<li>Cost: "+holidays[i].cost+" yuan</li>").appendTo(inLi);
+            inLi.appendTo(outLi);
+            outLi.appendTo(list);
+        }
+        $("#holidayDisplay").html(list);
+    }
+    $(document).ready(function () {
+       $("#make").click(function () {
+           makeHoliday($("#des").val(),$("#dur").val(),$("#cos").val());
+           showHoli();
+       });
+    });
+</script>
+
+</body>
+</html>

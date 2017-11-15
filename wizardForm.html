@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wizardForm</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+</head>
+<body>
+<script>
+     $(document).ready(function () {
+         $("#submitForm").click(function () {
+             var re = /^[0-9]+$/;
+             var re2 = /[^0-9]/;
+             if(!$("#pfn").val()){
+                 alert("Personal first name can not be null");
+                 return false;
+             }
+             if(!$("#pln").val()){
+                 alert("Personal last name can not be null");
+                 return false;
+             }
+             var age = $("#pa").val();
+             if(!age){
+                 alert("Age can not be null");
+                 return false;
+             }
+             else{
+                 if(re2.test(age)){
+                     alert("Age must be a number");
+                     return false;
+                 }
+                 var agev = parseInt(age);
+                 if(5>agev||150<agev){
+                     alert("Age must range from 5 to 150");
+                     return false;
+                 }
+             }
+             var id = $("#pid").val();
+             if(!id){
+                 alert("ID number can not be null");
+                 return false;
+             }else{
+                 if(!(re.test(id)&&id.length===11)){
+                     alert("ID number must be 11-number-long");
+                     return false;
+                 }
+             }
+             if(confirm("Your input is valid. Are you sure you want to submit?")){
+                 return true;
+             }
+             return false;
+         });
+     });
+</script>
+<H1>Form 2 Wizard</H1>
+<HR>
+<div style="border: 1px solid black;padding: 5px" id="description">
+    <p>After clicking the submit button, the following items will be checked</p>
+    <ol>
+        <li>Except from the text area at the bottom, input can not be empty</li>
+        <li>Age must consist of numbers and should range from 5 to 150</li>
+        <li>ID Number should contain 11 numbers</li>
+    </ol>
+</div>
+<p>(Handlers added by hand)</p>
+
+<form action="php/wizardForm.php" method="GET" name="quiz">
+    <OL>
+        <LI><P>Please identify and describe yourself:</P>
+            <TABLE>
+                <TR>
+                    <TD ALIGN="right"><EM>First Name</EM></TD>
+                    <TD><INPUT TYPE=TEXT id="pfn" NAME="Personal_FirstName" SIZE=25></TD>
+                </TR><TR>
+                <TD ALIGN="right"><EM>Last Name</EM></TD>
+                <TD><INPUT id="pln" TYPE=TEXT NAME="Personal_LastName" SIZE=25></TD>
+            </TR><TR>
+                <TD ALIGN="right"><EM>Age</EM></TD>
+                <TD><INPUT TYPE=TEXT id="pa" NAME="Personal_Age" SIZE=3 MAXLENGTH=3></TD>
+            </TR><TR>
+                <TD ALIGN="right"><EM>Sex</EM></TD>
+                <TD><INPUT TYPE=RADIO NAME="Personal_Sex" VALUE="Male" CHECKED>Male
+                    <INPUT TYPE=RADIO NAME="Personal_Sex" VALUE="Female">Female</TD>
+            </TR><TR>
+                <TD ALIGN="right"><EM>ID Number</EM></TD>
+                <TD><INPUT TYPE=TEXT id="pid" NAME="Personal_IDNumber" SIZE=16 MAXLENGTH=16></TD>
+            </TR>
+            </TABLE>
+
+        <LI><P>Choose one of the following options:</P>
+            <P><INPUT TYPE=RADIO NAME="watch" VALUE="Dunno" CHECKED> I don't know?!
+                <BR><INPUT TYPE=RADIO NAME="watch" VALUE="Radio"> Radio
+                <BR><INPUT TYPE=RADIO NAME="watch" VALUE="TV"> TV
+                <BR><INPUT TYPE=RADIO NAME="watch" VALUE="Film"> Film
+                <BR><BR>
+            </P>
+
+        <LI><P>Choose one of the following options:</P>
+            <P><SELECT NAME="holiday">
+                <OPTION value="Greece" SELECTED>Greece <OPTION value="Italy">Italy
+                <OPTION value="France">France <OPTION value="Spain">Spain
+            </SELECT>
+                <BR>
+            </P>
+        <LI><P>How would you rate your knowledge of JavaScript?</P>
+            <P>
+                <INPUT TYPE=RADIO NAME="knowledge" VALUE="1" onClick="alert('Time for some SERIOUS learning');">1
+                <INPUT TYPE=RADIO NAME="knowledge" VALUE="2" onClick="alert('I hope you\'re yearning for some learning');">2
+                <INPUT TYPE=RADIO NAME="knowledge" VALUE="3" CHECKED>3
+                <INPUT TYPE=RADIO NAME="knowledge" VALUE="4">4
+                <INPUT TYPE=RADIO NAME="knowledge" VALUE="5">5
+                <BR></P>
+    </OL>
+    <p />
+    <textarea name="chat" rows=5 cols=40></textarea><p />
+    <INPUT TYPE=button VALUE="Don't Push Me" name="push" onClick="alert('HOW RUDE!!!!\nI asked you NOT to push me');">
+    <INPUT TYPE=SUBMIT id="submitForm" VALUE="Submit Form">
+    <INPUT TYPE=RESET VALUE="Reset Form" onClick="return confirm('Are you sure?');">
+
+</FORM>
+
+</body>
+</html>
